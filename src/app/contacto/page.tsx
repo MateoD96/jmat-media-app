@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Mail, MessageSquare, AtSign, Link2, Globe } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Contacto - JMat Media",
-  description: "Ponte en contacto con JMat Media. Agencia de Paid Media y CRM Automation.",
+  description:
+    "Ponte en contacto con JMat Media. Agencia de Paid Media y CRM Automation.",
 };
 
 const contactInfo = [
@@ -120,39 +122,53 @@ export default function ContactoPage() {
               </div>
             </div>
 
-            <div className="rounded-2xl border border-[rgba(138,81,187,0.2)] bg-[rgba(26,26,31,0.8)] p-8 flex flex-col">
-              <div className="flex items-center gap-3 mb-6">
+            <div className="rounded-2xl border border-[rgba(138,81,187,0.2)] bg-[rgba(26,26,31,0.95)] flex flex-col">
+              <div className="flex items-center gap-3 px-8 pt-8 pb-6">
                 <div className="w-2 h-2 rounded-full bg-[#8A51BB] animate-pulse" />
                 <h2 className="text-lg font-semibold text-[#EFE5FE]">
                   Formulario de contacto
                 </h2>
               </div>
 
-              <div className="flex-1 rounded-xl border border-dashed border-[rgba(138,81,187,0.25)] bg-[rgba(138,81,187,0.03)] flex flex-col items-center justify-center gap-4 p-10 text-center min-h-[320px]">
-                <div className="w-12 h-12 rounded-2xl bg-[rgba(138,81,187,0.12)] border border-[rgba(138,81,187,0.2)] flex items-center justify-center">
-                  <MessageSquare size={22} className="text-[#8A51BB]" />
-                </div>
-                <div>
-                  <p className="text-sm font-medium text-[#EFE5FE]">
-                    Formulario GoHighLevel
-                  </p>
-                  <p className="text-xs text-[#5A3793] mt-1 leading-relaxed max-w-xs">
-                    El formulario de contacto se integrará aquí vía GoHighLevel
-                    embed. Espacio reservado para el widget.
-                  </p>
-                </div>
-                <div className="flex flex-col gap-2 w-full max-w-xs opacity-30 pointer-events-none select-none">
-                  {["Nombre", "Email", "Mensaje"].map((p) => (
-                    <div
-                      key={p}
-                      className="h-10 rounded-lg bg-[rgba(138,81,187,0.15)] border border-[rgba(138,81,187,0.2)]"
-                    />
-                  ))}
-                  <div className="h-10 rounded-lg bg-[#8A51BB] opacity-50" />
-                </div>
+              <style>{`
+                #inline-kheyCJZoQXRbfaIP9HSu,
+                [data-layout-iframe-id="inline-kheyCJZoQXRbfaIP9HSu"] {
+                  box-shadow: none !important;
+                }
+              `}</style>
+
+              <div className="flex-1 px-4 pb-4">
+                <iframe
+                  src="https://link.jmatmedia.com/widget/form/kheyCJZoQXRbfaIP9HSu"
+                  style={{
+                    width: "100%",
+                    height: "437px",
+                    border: "none",
+                    borderRadius: "12px",
+                    boxShadow: "none",
+                  }}
+                  id="inline-kheyCJZoQXRbfaIP9HSu"
+                  data-layout='{"id":"INLINE"}'
+                  data-trigger-type="alwaysShow"
+                  data-trigger-value=""
+                  data-activation-type="alwaysActivated"
+                  data-activation-value=""
+                  data-deactivation-type="neverDeactivate"
+                  data-deactivation-value=""
+                  data-form-name="JMat Contact Form"
+                  data-height="437"
+                  data-layout-iframe-id="inline-kheyCJZoQXRbfaIP9HSu"
+                  data-form-id="kheyCJZoQXRbfaIP9HSu"
+                  title="JMat Contact Form"
+                />
+
+                <Script
+                  src="https://link.jmatmedia.com/js/form_embed.js"
+                  strategy="lazyOnload"
+                />
               </div>
 
-              <p className="text-xs text-[#5A3793] text-center mt-4">
+              <p className="text-xs text-[#5A3793] text-center pb-5">
                 Tiempo de respuesta: menos de 24 horas hábiles
               </p>
             </div>
